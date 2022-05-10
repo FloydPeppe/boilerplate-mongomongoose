@@ -23,11 +23,6 @@ const createAndSavePerson = function(done){
   });
 };
 
-var foo= function(){
-  console.log("foo");
-}
-
-foo();
 
 /** 4) Create many People with `Model.create()` */
 var arrayOfPeople = [
@@ -43,8 +38,12 @@ var createManyPeople = function(arrayOfPeople, done) {
   });
 };
 
-const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+/** 5) Use `Model.find()` */
+var findPeopleByName = function(personName, done) {
+  Person.find({name: personName}, function (err, personFound) {
+    if (err) return console.log(err);
+    done(null, personFound);
+  });
 };
 
 const findOneByFood = (food, done) => {
