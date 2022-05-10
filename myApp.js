@@ -23,6 +23,12 @@ const createAndSavePerson = function(done){
   });
 };
 
+var foo= function(){
+  console.log("foo");
+}
+
+foo();
+
 /** 4) Create many People with `Model.create()` */
 var arrayOfPeople = [
   {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
