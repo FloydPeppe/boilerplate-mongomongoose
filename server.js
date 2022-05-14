@@ -41,8 +41,7 @@ app.use(bodyParser.urlencoded({ extended: "false" }));
 app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-  //res.json({ isMongooseOk: !!mongoose.connection.readyState });
-  res.sendFile(path.join(__dirname, "views", "index.html"));
+    res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 router.get("/file/*?", function (req, res, next) {
